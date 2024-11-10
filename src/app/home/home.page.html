@@ -1,20 +1,58 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content > 
+  <style>
+    .top {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .nameText {
+      flex: 1; /* Para que el texto ocupe el espacio restante */
+    }
+    .imageThumbnail img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%; /* Hace que la imagen sea circular */
+      object-fit: cover; /* Asegura que la imagen no se deforme */
+      margin-right: 20px;
+    }
+  </style>
+  <div class="top">
+    <div class="nameText">
+      <p>Hello, <span>{{ userName }}!</span></p>
+        <h6>Nice to see you back</h6>
+    </div>
+    <div class="imageThumbnail">
+      <img src="/assets/usuario.png" (click)="onLogout()"/>
+    </div>
   </div>
+
+  <!-- Botón de cerrar sesión pequeño con estilo en línea
+  <div style="display: flex; justify-content: right; margin-top: 10px;">
+    <ion-button color="danger" size="small" (click)="onLogout()" style="padding: 4px 12px; font-size: 14px;">
+      Cerrar sesión
+    </ion-button>
+  </div> -->
+
+  <div class="middleBox">
+    <div class="firstDiv" [routerLink]="['/register-emotion']">
+      <img src="/assets/gato.png"/>
+      <p>Diario de emociones</p>
+      <h6>¿Cómo te sientes hoy?</h6>
+    </div> 
+    <div class="secondDiv" [routerLink]="['/view-emotions']">
+      <img src="/assets/emociones.png"/>
+      <p>Historial de emociones</p>
+      <h6>Recapitulemos tus emociones</h6>
+    </div> 
+</div>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="menu-icon-container">
+      <img src="assets/home.png" alt="Inicio" class="menu-icon" routerLink="/home" />
+      <img src="assets/gato.png" alt="Emoción" class="menu-icon" routerLink="/register-emotion" />
+      <img src="assets/emociones.png" alt="Ver Emociones" class="menu-icon" routerLink="/view-emotions" />
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,27 +1,128 @@
-#container {
-  text-align: center;
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+    ion-content{
+        font-family: 'Poppins', sans-serif;
+        --background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.1)),
+        url("/assets/Fondo.png") no-repeat center center / cover;
+        .top{
+            margin-top: 2rem;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            .nameText{
+                margin-top: 20px;
+                p{
+                    color: #fff;
+                    margin-left:25px;
+                    font-size: 28px;
+                    span{
+                        font-weight: bold;
+                    }
+                }
+                h6{
+                    margin-left:25px;
+                    font-size:18px;
+                    margin-top:-30px;
+                    color:#cccccc;
+                }
+              
+            }
+            .imageThumbnail{
+                img{
+                    width:90px;
+                    height: 90px;
+                    margin-right: 20px !important;
+                }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+            }
+        }
+        
+        .middleBox{
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            gap: 20px;
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
+        .firstDiv{
+            height:auto;
+            background-color: #a8cddc;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #a8cddc;
+            display:flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 90px;
+                height: 90px;
+                margin-top: 10px;
+            }
+            p{
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;  
+            }
+            h6{
+               font-size: 12px;
+               margin-top: -20px; 
+               color: #424f6d
+            }
+        }
+        .secondDiv{
+            height:auto;
+            background-color: #707ab4;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #707ab4;
+            display:flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            p{
+                font-size: 20px;
+                font-weight: bold;
+            }
+            img{
+                width: 90px;
+                height: 90px;
+                margin-top: 10px;
+            }
+            h6{
+                margin-top: -20px;
+                font-size: 12px;
+                color: #242c3f
+            }
+        
+        }
+        }
+    }
+    ion-footer {
+        background-color: #000; /* Ajusta el color de fondo si es necesario */
+      }
+      
+      ion-toolbar {
+        --background: transparent;
+      }
+      
+      .menu-icon-container {
+        display: flex;
+        justify-content: space-around; /* Espacia los íconos de manera uniforme */
+        align-items: center;
+        width: 100%; /* Asegura que ocupe todo el ancho del toolbar */
+      }
+      
+      .menu-icon {
+        width: 24px;
+        height: 24px;
+      }

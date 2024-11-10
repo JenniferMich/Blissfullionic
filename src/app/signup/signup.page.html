@@ -1,0 +1,110 @@
+<ion-header>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Create an account</h1>
+      <p>Start your path to mental health with us</p>
+    </div>
+    <div class="login-form ion-padding">
+      <form [formGroup]="signupForm" (ngSubmit)="registerUser()">
+        <!-- Full Name -->
+        <div class="form-input">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Full Name</ion-label>
+            <ion-input formControlName="nombre" type="text"></ion-input>
+            <ion-note slot="error" *ngIf="nombre?.touched && nombre?.errors?.['required']">
+              Full name is required
+            </ion-note>
+            <ion-note slot="error" *ngIf="nombre?.touched && nombre?.errors?.['minlength']">
+              Name must be at least 2 characters
+            </ion-note>
+          </ion-item>
+        </div>
+
+        <!-- Email -->
+        <div class="form-input">
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="correo" type="email"></ion-input>
+            <ion-note slot="error" *ngIf="correo?.touched && correo?.errors?.['required']">
+              Email is required
+            </ion-note>
+            <ion-note slot="error" *ngIf="correo?.touched && correo?.errors?.['email']">
+              Please enter a valid email
+            </ion-note>
+          </ion-item>
+        </div>
+
+        <!-- Name of a family member -->
+        <div class="form-input">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Name of a family member</ion-label>
+            <ion-input formControlName="nombreFamiliar" type="text"></ion-input>
+            <ion-note slot="error" *ngIf="nombreFamiliar?.touched && nombreFamiliar?.errors?.['required']">
+              Family member name is required
+            </ion-note>
+          </ion-item>
+        </div>
+
+        <!-- Number of a family member -->
+        <div class="form-input">
+          <ion-icon name="call-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Number of a family member</ion-label>
+            <ion-input formControlName="numeroFamiliar" type="tel"></ion-input>
+            <ion-note slot="error" *ngIf="numeroFamiliar?.touched && numeroFamiliar?.errors?.['required']">
+              Family member number is required
+            </ion-note>
+            <ion-note slot="error" *ngIf="numeroFamiliar?.touched && numeroFamiliar?.errors?.['pattern']">
+              Please enter a valid phone number (8-10 digits)
+            </ion-note>
+          </ion-item>
+        </div>
+
+        <!-- Number of your Psychologist/Psychiatrist -->
+        <div class="form-input">
+          <ion-icon name="call-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Number of your Psicologist/Psiquiatrist</ion-label>
+            <ion-input formControlName="numeroPsico" type="tel"></ion-input>
+            <ion-note slot="error" *ngIf="numeroPsico?.touched && numeroPsico?.errors?.['required']">
+              Professional's number is required
+            </ion-note>
+            <ion-note slot="error" *ngIf="numeroPsico?.touched && numeroPsico?.errors?.['pattern']">
+              Please enter a valid phone number (8-10 digits)
+            </ion-note>
+          </ion-item>
+        </div>
+
+        <!-- Password -->
+        <div class="form-input">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName="contrasena" type="password"></ion-input>
+            <ion-note slot="error" *ngIf="contrasena?.touched && contrasena?.errors?.['required']">
+              Password is required
+            </ion-note>
+            <ion-note slot="error" *ngIf="contrasena?.touched && contrasena?.errors?.['minlength']">
+              Password must be at least 6 characters
+            </ion-note>
+          </ion-item>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons ion-padding">
+          <ion-button size="large" class="login-button" type="submit" [disabled]="signupForm.invalid" routerLink="/forminicio">
+            Sign Up
+          </ion-button>
+          <ion-button class="signup-button" size="large" fill="outline" routerLink="/login">
+            Log In
+          </ion-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

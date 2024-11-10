@@ -1,0 +1,107 @@
+/* Fondo y contenido principal */
+ion-content {
+    --background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.1)),
+    url("/assets/Welcome.png") no-repeat center center / cover;
+}
+
+.login-section {
+    height: 80vh;
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    margin: auto;
+    border-top-left-radius: 46px;
+    border-top-right-radius: 46px;
+    overflow: auto;
+}
+
+/* Encabezado y texto */
+.heading {
+    margin-top: 20px;
+}
+.heading h1 {
+    text-align: center;
+    color: #0c7c4e;
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+.heading p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #7b7b7b;
+}
+
+/* Formulario de entrada */
+.form-label ion-item {
+    --background: #fff;
+    margin-top: 5px;
+    position: relative;
+   
+}
+.form-label ion-label {
+    font-weight: bolder;
+    font-size: 1.15rem;
+    color: #10945d;
+    margin-bottom: 20px;
+    text-align:center;
+    -webkit-transform: translateY(50%) ;
+    transform: translateY(50%) ;
+}
+.form-label ion-select {
+    color: #10945d;
+    font-size: 1.2rem;
+    margin-left: 35px;
+    -webkit-appearance:none; /* Ocultar triángulo de selección */
+    appearance: none;
+    margin-top: 20px;
+
+}
+
+/* Botones */
+.boton {
+    position: absolute;
+    color: #f0f0f0;
+    margin: 10px 50px;
+    margin-top: 80px;
+}
+.action-buttons .login-button, 
+.action-buttons .sign-button {
+    width: 100%;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.login-button {
+    --background: #066360;
+}
+.sign-button {
+    --border-color: #3a855d;
+    color: #073b25;
+}
+
+/* Estilos para la selección sin triángulo en ion-select */
+ion-select::part(native) {
+    -webkit-appearance: none; /* Safari */
+    appearance: none; /* Otros navegadores */
+}
+
+.section {
+    position: relative; /* Asegura que los botones se posicionen dentro de la sección */
+    padding-bottom: 60px; /* Espacio para que los botones no cubran el contenido */
+}
+
+
+.prev-button {
+    left: 10px; /* Posiciona el botón de "Atrás" en la esquina inferior izquierda */
+}
+
+.next-button {
+    right: 10px; /* Posiciona el botón de "Siguiente" en la esquina inferior derecha */
+}
+
+
+  

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar style="--background-color: darkgreen !important;">
+    <ion-title>Mis Emociones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <img src="/assets/emociones.png" alt="Emotion Icon" style="width: 160px; height: 200px; object-fit: cover;">
+  </div>
+  
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let emotion of emotions" toggleIcon="chevron-down">
+      <ion-item slot="header">
+        <ion-label>
+          <h2>{{ emotion.date }}</h2>
+          <h3>{{ emotion.mood }}</h3>
+        </ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>{{ emotion.notes }}</p>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+  
+  <div class="button-container">
+    <ion-button style="--background-color: darkgreen !important;" routerLink="/register-emotion">Registrar Nueva Emoción</ion-button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="menu-icon-container">
+      <img src="assets/home.png" alt="Inicio" class="menu-icon" routerLink="/home" />
+      <img src="assets/gato.png" alt="Emoción" class="menu-icon" routerLink="/register-emotion" />
+      <img src="assets/emociones.png" alt="Ver Emociones" class="menu-icon" routerLink="/view-emotions" />
+    </div>
+  </ion-toolbar>
+</ion-footer>

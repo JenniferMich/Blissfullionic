@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar style="--background-color: darkgreen !important;">
+    <ion-title>Registrar Emoción</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Imagen centrada antes del formulario -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <img src="/assets/water.png.png" alt="Emotion Icon" style="width: 100px; height: 100px;  object-fit: cover;">
+  </div>
+
+  <form (submit)="saveEmotion()">
+    <!-- Campo para el estado de ánimo -->
+    <ion-item style="--background-color: #0a5845 !important;  border-radius: 15px;">
+      <ion-label position="stacked" style="color: #ffffff;">¿Cómo te sientes?</ion-label>
+      <ion-input [(ngModel)]="mood" name="mood" required></ion-input>
+    </ion-item>
+
+    <!-- Campo para notas -->
+    <ion-item style="--background-color: #0a5845 !important;  border-radius: 15px; margin-top: 15px;">
+      <ion-label position="stacked" style="color: #ffffff;">Notas</ion-label>
+      <ion-textarea [(ngModel)]="notes" name="notes"></ion-textarea>
+    </ion-item>
+    <div class="button-container">
+      <ion-button  type="submit">Guardar Emoción</ion-button>
+      <ion-button  routerLink="/view-emotions">Ver Mis Emociones</ion-button>
+    </div>
+ 
+  </form>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="menu-icon-container">
+      <img src="assets/home.png" alt="Inicio" class="menu-icon" routerLink="/home" />
+      <img src="assets/gato.png" alt="Emoción" class="menu-icon" routerLink="/register-emotion" />
+      <img src="assets/emociones.png" alt="Ver Emociones" class="menu-icon" routerLink="/view-emotions" />
+    </div>
+  </ion-toolbar>
+</ion-footer>

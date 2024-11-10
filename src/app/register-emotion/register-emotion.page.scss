@@ -1,0 +1,60 @@
+ion-toolbar {
+    
+    --color: #ffffff;
+  }
+  
+  ion-content {
+    --background: #137265;
+  }
+  
+  ion-item {
+    border-radius: 8px;
+    margin: 8px 0;
+    background-color: #118370;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    --border-radius: 90px;
+    --background: #6fcca8;
+    align-items: center;
+  }
+  ion-content{
+    font-family: 'Poppins', sans-serif;
+    --background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.1)),
+    url("/assets/Fondo.png") no-repeat center center / cover;}
+    .button-container {
+  display: flex;
+  flex-direction: column; /* Acomoda los botones uno debajo del otro */
+  align-items: center;    /* Centra los botones horizontalmente */
+  gap: 10px;              /* Espacio entre los botones */
+  margin-top: 20px;
+}
+
+ion-button {
+  width: 80%;              /* Ajusta el ancho de los botones */
+  --border-radius: 50px;   /* Hace los botones ovalados */
+  --background: #166861;   /* Color de fondo */
+  --color: white;          /* Color del texto */
+  text-align: center;
+}
+ion-footer {
+  background-color: #000; /* Ajusta el color de fondo si es necesario */
+}
+
+ion-toolbar {
+  --background: transparent;
+}
+
+.menu-icon-container {
+  display: flex;
+  justify-content: space-around; /* Espacia los íconos de manera uniforme */
+  align-items: center;
+  width: 100%; /* Asegura que ocupe todo el ancho del toolbar */
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,111 @@
+<ion-content [fullscreen]="true">
+  <div class="login-section ion-padding">
+    <form [formGroup]="formInicio">
+      <!-- Sección 1 -->
+      <div *ngIf="currentSection === 1" class="section ion-padding">
+        <div class="heading ion-padding">
+          <h1>Formulario de salud mental</h1>
+          <p>Completa el formulario para continuar</p>
+        </div>
+
+        <div class="form-label">
+          <ion-item class="form-label">
+            <ion-label position="floating">¿Sufres de alguna discapacidad física?</ion-label>
+            <ion-select formControlName="discapacidadFisica">
+              <ion-select-option value="Si">Si</ion-select-option>
+              <ion-select-option value="No">No</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <div class="form-label" *ngIf="formInicio?.get('discapacidadFisica')?.value === 'Si'">
+          <ion-item class="form-label">
+            <ion-label position="floating">Especifique el tipo de discapacidad física:</ion-label>
+            <ion-select formControlName="tipoDiscapacidadFisica">
+              <ion-select-option value="Ninguna">Ninguna</ion-select-option>
+              <ion-select-option value="Monoplejia">Monoplejia</ion-select-option>
+              <ion-select-option value="Paraplejia">Paraplejia</ion-select-option>
+              <ion-select-option value="Tetraplejia">Tetraplejia</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <ion-button 
+          expand="block" 
+          (click)="nextSection()" 
+          class="boton next-button" 
+          style="--background:#2A846B!important;--border-radius: 30px!important;">
+          Siguiente
+        </ion-button>
+      </div>
+
+      <!-- Sección 2 -->
+      <div *ngIf="currentSection === 2" class="section ion-padding">
+        <div class="form-label">
+          <ion-item class="form-label">
+            <ion-label position="floating">¿Sufres de alguna discapacidad mental?</ion-label>
+            <ion-select formControlName="discapacidadMental">
+              <ion-select-option value="Si">Si</ion-select-option>
+              <ion-select-option value="No">No</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <div class="form-label" *ngIf="formInicio?.get('discapacidadMental')?.value === 'Si'">
+          <ion-item class="form-label">
+            <ion-label position="floating">Especifique el tipo de discapacidad mental:</ion-label>
+            <ion-select formControlName="tipoDiscapacidadMental">
+              <ion-select-option value="Ninguna">Ninguna</ion-select-option>
+              <ion-select-option value="Depresión">Depresión</ion-select-option>
+              <ion-select-option value="Psicosis">Psicosis</ion-select-option>
+              <ion-select-option value="Esquizofrenia">Esquizofrenia</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <ion-button expand="block" (click)="prevSection()" class="boton prev-button" style="--background:#2A846B!important;--border-radius: 30px!important;">
+          Atrás
+        </ion-button>
+        <ion-button expand="block" (click)="nextSection()" class="boton next-button" style="--background:#2A846B!important;--border-radius: 30px!important;">
+          Siguiente
+        </ion-button>
+      </div>
+
+      <!-- Sección 3 -->
+      <div *ngIf="currentSection === 3" class="section ion-padding">
+        <div class="form-label">
+          <ion-item class="form-label">
+            <ion-label position="floating">¿Has sido diagnosticado con algún trastorno psicológico?</ion-label>
+            <ion-select formControlName="trastornoPsicologico">
+              <ion-select-option value="Si">Si</ion-select-option>
+              <ion-select-option value="No">No</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <div class="form-label">
+          <ion-item class="form-label">
+            <ion-label position="floating">Indique el tipo de tratamiento que está recibiendo:</ion-label>
+            <ion-select formControlName="tipoTratamiento">
+              <ion-select-option value="Terapia conductual">Terapia conductual</ion-select-option>
+              <ion-select-option value="Terapia cognitiva">Terapia cognitiva</ion-select-option>
+              <ion-select-option value="Terapia interpersonal">Terapia interpersonal</ion-select-option>
+              <ion-select-option value="Otra">Otra</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <ion-button expand="block" (click)="prevSection()" class="boton prev-button" style="--background:#2A846B!important;--border-radius: 30px!important;">
+          Atrás
+        </ion-button>
+        <ion-button 
+          expand="block" 
+          (click)="submitForm()" 
+          class="boton next-button" 
+          style="--background:#2A846B!important;--border-radius: 30px!important;">
+          Enviar
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>
